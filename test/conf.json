@@ -1,0 +1,18 @@
+{
+  "title" : "my express",
+
+  "logger" : {
+    "enabled" : true,
+    "dir"     : "logs"
+  },
+
+  "restfulServer" : {
+    "port" : 8087,
+    "path" : "/pbrain"
+  },
+
+  "mySqlServer" : {
+    "host" : ""
+  }
+
+}

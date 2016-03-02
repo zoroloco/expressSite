@@ -1,0 +1,22 @@
+{
+  "name": "pbrain",
+  "version": "0.0.1",
+  "description": "Restful server that returns the best matched cases.",
+  "main": "node lib/pbrain.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "author": {
+    "name": "Kenneth Centurion"
+  },
+  "dependencies": {
+    "async"  : "^1.5.0",
+    "winston": "^2.1.1",
+    "mysql"  : "^2.10.2",
+    "express": "^4.13.4",
+    "ejs"    : "^1.0.0"
+  },
+  "engines": {
+    "node": "^4.3.0"
+  }
+}

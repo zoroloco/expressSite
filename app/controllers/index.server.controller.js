@@ -1,5 +1,5 @@
-var log    = require(pathUtil.join(__dirname,'../../lib/logger.js')),;
-var client = require(pathUtil.join(__dirname,'../../lib/tcpClient.js'));
+var log    = require(pathUtil.join(__dirname,'../../lib/logger.js')),
+    client = require(pathUtil.join(__dirname,'../../lib/tcpClient.js'));
 
 module.exports = IndexController;
 

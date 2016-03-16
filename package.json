@@ -1,8 +1,8 @@
 {
-  "name": "pbrain",
+  "name": "raspatron-web",
   "version": "0.0.1",
   "description": "Restful server that returns the best matched cases.",
-  "main": "node lib/pbrain.js",
+  "main": "node lib/server.js",
   "scripts": {
     "test": "node test/test.js"
   },
@@ -14,6 +14,7 @@
     "winston": "^2.1.1",
     "mysql"  : "^2.10.2",
     "express": "^4.13.4",
+    "underscore": "^1.8.3",
     "ejs"    : "^1.0.0"
   },
   "engines": {

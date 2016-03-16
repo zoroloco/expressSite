@@ -6,7 +6,7 @@
   },
 
   "restfulServer" : {
-    "port" : 8088,
+    "port" : 8172,
     "path" : "/myapp"
   },
 

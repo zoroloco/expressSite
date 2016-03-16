@@ -2,8 +2,9 @@
   "name": "raspatron-web",
   "version": "0.0.1",
   "description": "Restful server that returns the best matched cases.",
-  "main": "node lib/server.js",
+  "main": "node index.js",
   "scripts": {
+    "start" : "node index.js",
     "test": "node test/test.js"
   },
   "repository": {

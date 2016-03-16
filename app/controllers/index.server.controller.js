@@ -1,4 +1,5 @@
-var log = require(pathUtil.join(__dirname,'../../lib/logger.js'));
+var log    = require(pathUtil.join(__dirname,'../../lib/logger.js')),;
+var client = require(pathUtil.join(__dirname,'../../lib/tcpClient.js'));
 
 module.exports = IndexController;
 
@@ -10,6 +11,10 @@ function IndexController(properties){
 
   var self = this;
   this._properties = properties;
+
+  IndexController.prototype.moveLeft = function(){
+    log.info("Moved left.");
+  }
 
   IndexController.prototype.render = function(req,res){
     log.info("Default page requested.");

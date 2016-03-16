@@ -23,7 +23,7 @@ chmod +x /usr/local/src/raspatron-web/raspatron-web.sh
 echo "moving and updating startup script"
 sudo cp /usr/local/src/raspatron-web/rpi/etc/init.d/raspatron-web.sh /etc/init.d
 sudo chmod +x /etc/init.d/raspatron-web.sh
-sudo update.rc.d /etc/init.d/raspatron-web.sh defaults
+update.rc.d /etc/init.d/raspatron-web.sh defaults
 
 echo "Now running raspatron-web."
 /usr/local/src/raspatron-web/raspatron-web.sh

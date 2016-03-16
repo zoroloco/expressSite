@@ -1,2 +1,5 @@
+#Website to control Raspatron.
 
-Run 'npm install' to get all dependencies.
+1.) Move update-raspatron.sh to /usr/local/src
+2.) Run update-raspatron.sh
+3.) You now have latest code.

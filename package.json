@@ -6,6 +6,15 @@
   "scripts": {
     "test": "node test/test.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoroloco/raspatron-web.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zoroloco/raspatron-web/issues",
+    "email": "kcenturion@yahoo.com"
+  },
   "author": {
     "name": "Kenneth Centurion"
   },

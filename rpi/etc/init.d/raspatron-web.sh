@@ -1,23 +1,23 @@
 #!/bin/sh
 
 ### BEGIN INIT INFO
-# Provides:          raspatron
+# Provides:          raspatron-web
 # Required-Start:    $remote_fs $syslog
 # Required-Stop:     $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Runs raspatron
-# Description:       Runs raspatron
+# Short-Description: Runs raspatron-web
+# Description:       Runs raspatron-web
 ### END INIT INFO
 #
-# NOTE: sudo update-rc.d raspatron.sh defaults (will add this to startup script)
-# NOTE: run with:  /etc/init.d/raspatron.sh start | stop
+# NOTE: sudo update-rc.d raspatron-web.sh defaults (will add this to startup script)
+# NOTE: run with:  /etc/init.d/raspatron-web.sh start | stop
 #
 
 # Change the next 3 lines to suit where you install your script and what you want to call it
-DIR=/usr/local/src
-DAEMON=$DIR/raspatron.sh
-DAEMON_NAME=raspatron
+DIR=/usr/local/src/raspatron-web
+DAEMON=$DIR/raspatron-web.sh
+DAEMON_NAME=raspatron-web
 
 # Add any command line options for your daemon here
 DAEMON_OPTS=""
@@ -39,17 +39,7 @@ do_start () {
 do_stop () {
     log_daemon_msg "Stopping system $DAEMON_NAME daemon"
     start-stop-daemon --stop --signal TERM --pidfile $PIDFILE
-    killall raspatron
-    killall nodatron
-
-if pgrep mjpg_streamer
-then
-  kill $(pgrep mjpg_streamer) > /dev/null 2>&1
-  echo "mjpg_streamer stopped"
-else
-  echo "mjpg_streamer not running"
-fi
-
+    killall raspatron-web
 
     log_end_msg $?
 }

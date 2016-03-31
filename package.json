@@ -6,6 +6,7 @@
   "scripts": {
     "postinstall" : "bower install",
     "start" : "node index.js",
+    "stop"  : "kilall node",
     "test": "node test/test.js"
   },
   "repository": {
@@ -21,14 +22,15 @@
     "name": "Kenneth Centurion"
   },
   "dependencies": {
-    "async"  : "^1.5.0",
-    "winston": "^2.1.1",
-    "mysql"  : "^2.10.2",
-    "express": "^4.13.4",
-    "underscore": "^1.8.3",
-    "jade"    : "^1.11.0",
-    "body-parser" : "^1.15.0",
-    "method-override" : "^2.3.5"
+    "async"           : "^1.5.0",
+    "winston"         : "^2.1.1",
+    "mysql"           : "^2.10.2",
+    "express"         : "^4.13.4",
+    "underscore"      : "^1.8.3",
+    "jade"            : "^1.11.0",
+    "body-parser"     : "^1.15.0",
+    "method-override" : "^2.3.5",
+    "bower"           : "1.7.7"
   },
   "engines": {
     "node": "^4.3.0"

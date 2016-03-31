@@ -5,10 +5,10 @@
 
         // home page
         .when('/', {
-            templateUrl: 'views/home.html',
+            templateUrl: 'views/index.html',
             controller: 'MainController'
         });
-      
+
     $locationProvider.html5Mode(true);
 
 }]);

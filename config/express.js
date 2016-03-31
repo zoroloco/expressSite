@@ -1,10 +1,10 @@
-var express = require('express'),
-    bodyParser     = require('body-parser');
-    methodOverride = require('method-override');
+const express = require('express'),
+      bodyParser     = require('body-parser');
+      methodOverride = require('method-override');
 
 module.exports = function(properties) {
     var app = express();
-    app.set('views', './app/views');
+    app.set('views','../public/views');
     app.set('view engine', 'jade');
     app.set('properties', properties);
 
@@ -22,7 +22,7 @@ module.exports = function(properties) {
     app.use(methodOverride('X-HTTP-Method-Override'));
 
     // set the static files location /public/img will be /img for users
-    app.use(express.static(__dirname + '/public')); 
+    app.use(express.static(__dirname + '/public'));
 
     require('../app/routes/index.server.routes.js')(app);
     return app;

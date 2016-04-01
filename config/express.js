@@ -1,10 +1,10 @@
-const express = require('express'),
+const express        = require('express'),
       bodyParser     = require('body-parser');
       methodOverride = require('method-override');
 
 module.exports = function(properties) {
     var app = express();
-    app.set('views','../public/views');
+    app.set('views',__dirname+'/public');
     app.set('view engine', 'jade');
     app.set('properties', properties);
 

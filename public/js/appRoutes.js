@@ -4,8 +4,8 @@
            function($routeProvider, $locationProvider) {
 
             $routeProvider.when('/', {
-                  templateUrl: 'views/index.html',
-                  controller: 'MainController'
+                  templateUrl : 'views/index.html',
+                  controller  : 'CamController'
               });
 
             $locationProvider.html5Mode(true);

@@ -1,7 +1,7 @@
 {
   "name": "raspatron-web",
   "version": "0.0.1",
-  "description": "Restful server that returns the best matched cases.",
+  "description": "Full MEAN stack web application to control raspatron.",
   "main": "node index.js",
   "scripts": {
     "postinstall" : "bower install",

@@ -21,10 +21,19 @@
     <script src="js/app.js"></script>
 </head>
 
-<body ng-app="raspatron-web" ng-controller="MainController">
+<body ng-app="raspatron-web" ng-controller="CamController as ctrl">
   <div class="container">
+    <embed src="http://www.druidia.net:8171/stream_simple.html" type="JPEG" width="800" height="800">
 
-
+    <p>Value: {{ctrl.baseSliderValue}}</p>
+    <div range-slider
+         floor   ="0"
+         ceiling ="180"
+         step    ="5"
+         dragstop="true"
+         precision="180"
+         ng-model="ctrl.baseSliderValue">
+    </div>
   </div>
 </body>
 </html>

@@ -1,2 +1,2 @@
 // public/js/app.js
-angular.module('raspatron-web', ['ngRoute', 'appRoutes', 'MainCtrl']);
+angular.module('raspatron-web', ['ngRoute', 'appRoutes', 'CamController']);

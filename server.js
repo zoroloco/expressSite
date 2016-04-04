@@ -1,7 +1,7 @@
 var pathUtil   = require('path'),
     async      = require('async'),
     log        = require(pathUtil.join(__dirname,'./lib/logger.js')),
-    utils      = require(pathUtil.join(__dirname,'./lib/commonutils.js')),
+    _          = require('underscore'),
     express    = require(pathUtil.join(__dirname,'./config/express'));
 
 module.exports = Server;
@@ -14,13 +14,13 @@ function Server(conf){
     throw new TypeError("Classes can't be function-called.");
   }
 
-  var self   = this;
-  this._conf = conf;
-  this._app  = express(conf.restfulServer);
+  var self      = this;
+  this._conf    = conf;
+  this._app     = express(conf);
   process.title = conf.title;
 
   try{
-    if(!utils.isEmpty(this._conf)){
+    if(!_.isEmpty(this._conf)){
       log.info("Successfully read well-formatted config file:\n"+JSON.stringify(this._conf));
     }
     else{
@@ -29,14 +29,14 @@ function Server(conf){
     }
   }
   catch(e){
-    log.warn("Starting pbrain resulted in the exception:"+e);
+    log.warn("Starting raspatron-web resulted in the exception:"+e);
     process.exit(1);
   }
 
   //members
   Server.prototype.shutdown = function shutdown(INTERRUPT){
     log.warn("Starting clean shutdown.");
-    if(!utils.isEmpty(self._server)){
+    if(!_.isEmpty(self._server)){
       self._server.close();
     }
     process.exit();
@@ -54,7 +54,7 @@ function Server(conf){
     });
 
     process.on('exit', function(){
-      log.info("Pbrain exiting...");
+      log.info("Raspatron-web exiting...");
     })
 
     process.on('uncaughtException', function (err) {
@@ -68,7 +68,7 @@ function Server(conf){
       log.error(msg);
     });
 
-    self._server = self._app.listen(self._conf.restfulServer.port,function(){
+    self._server = self._app.listen(self._conf.port,function(){
         log.info(process.title+" server now listening on port:"+self._server.address().port);
     });
 

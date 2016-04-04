@@ -1,17 +1,19 @@
 { "title" : "raspatron-web",
 
-  "logger" : {
-    "enabled" : false,
-    "dir"     : "logs"
-  },
+  "port"  : 8172,
 
-  "restfulServer" : {
-    "port" : 8172,
-    "path" : "/myapp"
+  "logger" : {
+    "enabled" : true,
+    "dir"     : "logs"
   },
 
   "mySqlServer" : {
     "host" : ""
+  },
+
+  "tcpClient" : {
+    "remoteHost" : "localhost",
+    "remotePort" : 8170
   }
 
 }

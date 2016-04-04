@@ -9,12 +9,12 @@ function CamCommandSvc($http){
     self.moveBaseServo = function(angle){
       cmd.baseAngle = angle;
       cmd.camAngle  = '';
-      $http.post('api/cam',cmd);
+      $http.post('robo',cmd);
     },
     self.moveCamServo = function(angle){
       cmd.baseAngle = '';
       cmd.camAngle  = angle;
-      $http.post('api/cam',cmd);
+      $http.post('robo',cmd);
     }
 }
 

@@ -1,15 +1,22 @@
-function CamCommandSvc(){
-  var baseAngle = 0;
-  var neckAngle = 0;
+function CamCommandSvc($http){
+    var self = this;
 
-  this.moveBaseServo = function(degrees){
+    var cmd = {
+      'baseAngle' : '',
+      'camAngle'  : ''
+    };
 
-  };
-  this.moveCamServo = function(degrees){
-
-  };
-
+    self.moveBaseServo = function(angle){
+      cmd.baseAngle = angle;
+      cmd.camAngle  = '';
+      $http.post('api/cam',cmd);
+    },
+    self.moveCamServo = function(angle){
+      cmd.baseAngle = '';
+      cmd.camAngle  = angle;
+      $http.post('api/cam',cmd);
+    }
 }
 
-angular.module('raspatron-web',[])
-  .service('CamCommandSvc',[CamCommandSvc]);
+angular.module('raspatron-module')
+  .service('CamCommandSvc',['$http',CamCommandSvc]);

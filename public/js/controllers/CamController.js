@@ -1,15 +1,18 @@
-// public/js/controllers/MainCtrl.js
-angular.module('raspatron-web', ['angularRangeSlider']).
-  controller('CamController',function() {
+angular.module('raspatron-module', ['ngMaterial']).
+  controller('CamController',['$log','CamCommandSvc',function($log,camCommandSvc) {
     var self = this;
     //init the slider
     this.camSliderValue  = 90;
     this.baseSliderValue = 90;
 
-    this.dragstop   = true;
-    this.low        = 0;
-    this.high       = 180;
+    self.moveBase = function(){
+      $log.log("Base angle now at:"+self.baseSliderValue);
+      camCommandSvc.moveBaseServo(self.baseSliderValue);
+    }
 
+    self.moveCam = function(){
+      $log.log("Cam angle now at:"+self.camSliderValue);
+      camCommandSvc.moveCamServo(self.camSliderValue);
+    }
 
-
-  });
+  }]);

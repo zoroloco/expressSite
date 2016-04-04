@@ -23,10 +23,10 @@ function RoboController(properties){
     if(!_.isEmpty(self._client) &&
        !_.isEmpty(req.body)){
 
-      if(!_.isEmpty(req.body.baseAngle)){
+      if(_.isNumber(req.body.baseAngle)){
         self._client.send("9:"+req.body.baseAngle);
       }
-      else if(!_.isEmpty(req.body.camAngle)){
+      else if(_.isNumber(req.body.camAngle)){
         self._client.send("10:"+req.body.camAngle);
       }
     }

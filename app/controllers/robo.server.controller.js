@@ -26,18 +26,9 @@ function RoboController(properties){
       if(!_.isEmpty(req.body.baseAngle)){
         self._client.send("9:"+req.body.baseAngle);
       }
-      else if(!_isEmpty(req.body.camAngle)){
+      else if(!_.isEmpty(req.body.camAngle)){
         self._client.send("10:"+req.body.camAngle);
       }
     }
-
-    //just send 200 OK.
-    //res.sendFile(pathUtil.join(__dirname,'../../public/views/index.html'));
-    /*
-    res.render('index', {
-      title : "default page",
-      props : JSON.stringify(self._properties)
-    })
-    */
   }
 }

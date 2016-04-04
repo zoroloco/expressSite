@@ -4,9 +4,9 @@
   "description": "Full MEAN stack web application to control raspatron.",
   "main": "node index.js",
   "scripts": {
-    "postinstall" : "bower install",
+    "postinstall" : "node node_modules/bower/bin/bower install",
     "start" : "node index.js",
-    "stop"  : "kilall node",
+    "stop"  : "killall node",
     "test": "node test/test.js"
   },
   "repository": {

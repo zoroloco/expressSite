@@ -5,17 +5,22 @@
 
 clear
 
+echo "DO NOT RUN AS ROOT!"
+
 echo "Stopping raspatron web"
-/etc/init.d/raspatron-web.sh stop
+sudo /etc/init.d/raspatron-web.sh stop
 
 echo "Executing update script for raspatron-web..."
 
-rm -rf /usr/local/src/raspatron-web
-git clone https://github.com/zoroloco/raspatron-web.git /usr/local/src/raspatron-web
+sudo rm -rf /usr/local/src/raspatron-web
+sudo git clone https://github.com/zoroloco/raspatron-web.git /usr/local/src/raspatron-web
 
 echo "Now installing dependencies."
 cd /usr/local/src/raspatron-web
 sudo npm install
+
+echo "Now updating/syncing with bower."
+bower install
 
 echo "making scripts executable"
 chmod +x /usr/local/src/raspatron-web/raspatron-web.sh
